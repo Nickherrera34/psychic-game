@@ -1,0 +1,18 @@
+h1{
+	font-size: 35px;
+}
+
+h2{
+	font-size: 20px;
+}
+
+
+h1, h2{
+	margin-bottom: 15px;
+}
+
+
+
+body{
+	font-weight: bold;
+}
