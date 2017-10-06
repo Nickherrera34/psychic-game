@@ -6,28 +6,33 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 var computerChoice = alphabet [Math.floor(Math.random() * alphabet.length)];
 
 
-		console.log(computerChoice)
+
+console.log(computerChoice);
 
 document.onkeypress = function(event){
 	var userGuess = event.key;
 
 	if(userGuess === computerChoice){
 		wins++;
+		document.getElementById('win-count').innerHTML = "Wins: " + wins;
+		guesses = 9;
+		document.getElementById('guesses-left').innerHTML = "Guesses Left: " + guesses;
+		alert("You are a Psychic!")
+		
+	}
+	else{
+		guesses--;
+		document.getElementById('guesses-left').innerHTML = "Guesses Left: " + guesses;
+		document.getElementById('letters-picked').append(" ", event.key);
 		
 	}
 
-	else{guesses--;
-
-	}
-
 	if(guesses === 0) {
-		losses++
-		guesses = 9
+		losses++;
+		guesses = 9;
+		document.getElementById('loss-count').innerHTML = "Losses: " + losses;
+		alert("Sorry, you dont have the gift!")
+		
 	}
+};
 
-
-document.getElementById('win-count').innerHTML = "Wins: " + wins;
-document.getElementById('loss-count').innerHTML = "Losses: " + losses;
-document.getElementById('guesses-left').innerHTML = "Guesses Left: " + guesses;
-document.getElementById('letters-picked').innerHTML = "Your Guesses so far: " + userGuess;
-}
