@@ -36,3 +36,4 @@ document.onkeypress = function(event){
 	}
 };
 
+//I could not come up with a solution to be able to reset the computer's choice following a win or a loss
